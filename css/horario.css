@@ -1,0 +1,252 @@
+body {
+    background-image: url(../img/fondo.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+/* contenedor */
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* header */
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    margin: 2rem 0;
+}
+
+.header__icon{
+    perspective: 500px;
+}
+
+.header__icon-img {
+    width: 5em;
+    animation: rotate 6s linear infinite;
+    filter: drop-shadow(3px 3px 20px rgb(255, 255, 255));
+}
+
+@keyframes rotate{
+    from{
+        transform: rotateY(0deg);
+    }
+    to{
+        transform: rotateY(-365deg);
+    }
+}
+
+/* nav */
+.nav__link {
+    padding: 1rem;
+    margin: 2rem;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-family: 'century gothic', 'Roboto', sans-serif;
+}
+
+.nav__link--active::after, .nav__link--active::before{
+    content: '';
+    display: inline-block;
+    margin: 10px auto;
+    width: 10px;
+    height: 1px;
+    background-color: #00ffff;
+    position: absolute;
+}
+
+.nav__link--active::before{
+    margin-left: -20px;
+}
+
+.nav__link--active::after{
+    margin-left: 10px;
+}
+
+.nav__link:hover {
+    color: #00ffff;
+    transition: all 0.2s ease-in;
+    -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.8);
+}
+
+/* SECCION DE CARDS */
+
+.section__horarios{
+    padding: 2rem;
+    margin: 2rem 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    background-color: rgba(0, 0, 0, .3);
+}
+
+.card__container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.title__horarios-container{
+    width: 100%;
+    text-align: center;
+    text-shadow: 3px 2px  #000;
+    color: #fff;
+    font-family: 'roboto';
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.card{
+    width: 45%;
+    height: 350px;
+    background-color: rgba(0, 0, 0, .8);
+    border-radius: 2rem;
+    position: relative;
+    margin: 2rem;
+}
+
+.card__item{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    backface-visibility: hidden;
+    overflow: hidden;
+    transition: .5s;
+    box-shadow: 0 2px 2px 2px #fff;
+    border-radius: 2rem;
+}
+
+.card__title{
+    font-size: 2.5rem;
+    font-family: 'roboto', 'Monserrat', Arial, Helvetica, sans-serif;
+    color: rgb(6, 194, 194);
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.card__text{
+    width: 100%;
+    font-family: 'roboto', Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #f3f3f3;
+    font-size: 1.5rem;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+/* .card__text-margin{
+    margin-bottom: 3rem;
+} */
+
+.card__text-border{
+    padding: 1rem ;
+    border-top: 1px solid rgba(249, 249, 249, .3);
+    text-align: center;
+    border-radius: 0 0 2rem 2rem;
+}
+
+.card__front{
+    width: 100%;
+    height: 350px;
+    transform: perspective(600px) rotateY(0deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.card__title-front{
+    color: #fff;
+}
+
+.card__text-front{
+    text-align: center;
+    font-size: 2rem;
+}
+
+.card:hover .card__front{
+    transform: perspective(600px) rotateY(180deg);
+}
+
+.card__back{
+    transform: perspective(600px) rotateY(180deg);
+    width: 100%;
+    height: 350px;
+}
+
+.card:hover .card__back{
+    transform: perspective(600px) rotateY(360deg);
+}
+
+
+/* POLITICAS */
+
+.footer-politicas {
+    height: auto;
+    width: 100%;
+    background-color: #001b55;
+    text-align: center;
+    padding: 3rem;
+    margin: 5rem 0 0 0;
+}
+
+.politicas__item{
+    color: #fff;
+    font-family: 'roboto';
+}
+
+
+
+@media screen and (max-width:950px){
+    body{
+        background: url(../img/fondo-movil.jpg);
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: 150%;
+    }
+}
+
+@media screen and (max-width:670px){
+    .header {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .header__icon {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 1.5rem 0;
+    }
+    .header__icon-img {
+        width: 20%;
+    }
+    .header__nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin: 1rem 0;
+    }
+}
+
+@media screen and (max-width:576px){
+    .card{
+        width: 100%;
+    }
+}

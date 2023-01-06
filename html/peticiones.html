@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/peticiones.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <title>Ebenezer Rabinal | Contacto</title>
+    <link rel="shortcut icon" href="/img/icon.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header__icon">
+                <img class="header__icon-img" src="../img/icon.png" alt="icono">
+            </div>
+            <nav class="header__nav">
+                <a class="nav__link" href="../index.html">Inicio</a>
+                <a class="nav__link" href="predicas.html">Predicas</a>
+                <a class="nav__link nav__link--active" href="peticiones.html">Peticiones </a>
+                <a class="nav__link" href="horario.html">Horario</a>
+            </nav>
+        </header>
+
+        <main class="section-formulario">
+            <div class="formulario__container">
+                <div class="title__container">
+                    <h2 class="form__title">Peticiones de Oración</h2>
+                </div>
+                <form action="https://formsubmit.co/ebenezerrabinal@gmail.com" method="POST"id="form">
+                    <div class="form">
+                        <div class="form__item">
+                            <input class="field" type="text" name="Nombre" required maxlength="100">
+                            <p class="parrafo">Tu Nombre</p>
+                        </div>
+                        <div class="form__item">
+                            <input class="field" type="email" name="Usuraio" id="email" required maxlength="100">
+                            <p class="parrafo">Tu Correo</p>
+                        </div>
+                        <div class="form__item">
+                            <textarea class="field field--textarea" maxlength="100" name="Mensaje"></textarea>
+                            <p class="parrafo">Tu Petición</p>
+                        </div>
+                        <div class="btn__container">
+                            <input type="submit" class="form__btn" value="Enviar Petición" >
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+    <footer class="footer-politicas">
+        <div class="politicas-container">
+            <p class="politicas__item">&copy; Derechos Reservados - 2023</p>
+        </div>
+    </footer>
+</body>
+
+</html>

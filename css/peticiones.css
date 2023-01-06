@@ -1,0 +1,265 @@
+/* background */
+body{
+    background-image: url(../img/fondo.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+/* container */
+
+.container{
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* barra de navegacion */
+
+.header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    margin: 2rem 0;
+}
+
+.header__icon{
+    perspective: 500px;
+}
+
+.header__icon-img {
+    width: 5em;
+    animation: rotate 6s linear infinite;
+    filter: drop-shadow(3px 3px 20px rgb(255, 255, 255));
+}
+
+@keyframes rotate{
+    from{
+        transform: rotateY(0deg);
+    }
+    to{
+        transform: rotateY(-365deg);
+    }
+}
+
+.nav__link{
+    padding: 1rem;
+    margin: 2rem;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-family: 'century gothic','Roboto',sans-serif;
+}
+
+.nav__link--active::after, .nav__link--active::before{
+    content: '';
+    display: inline-block;
+    margin: 10px auto;
+    width: 10px;
+    height: 1px;
+    background-color: #00ffff;
+    position: absolute;
+}
+
+.nav__link--active::before{
+    margin-left: -20px;
+}
+
+.nav__link--active::after{
+    margin-left: 10px;
+}
+
+.nav__link:hover{
+    color: #00ffff;
+    transition: all 0.2s ease-in;
+    -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.8);
+}
+
+/* section de main */
+
+.section-formulario{
+    margin: 2rem auto;
+    padding: 5rem 0;
+    width: 90%;
+    max-width: 1000px;
+    background-image: linear-gradient(135deg, #0007d4, #505488, #2f3f80, #161569, #5a4894, #a950a1, #ff7cae);
+    background-size: 500%;
+    height: auto;
+    animation: fanimado 10s infinite;
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.4)
+}
+
+@keyframes fanimado{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+.formulario__container{
+    padding: 2rem;
+    width: 70%;
+    height: auto;
+    margin: auto;
+    text-align: center;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.8);
+}
+
+.title__container{
+    margin: 1rem 0 5rem 0;
+}
+
+.form__title{
+    font-size: 2.8rem;
+    color: #000;
+    font-family: 'Montserrat';
+    font-weight: 400;
+}
+
+/* INPUTS Y LABELS */
+
+.form__item{
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.parrafo{
+    font-family: 'Montserrat';
+    color: rgb(105, 95, 95);
+    font-size: 2rem;
+}
+
+.btn__container{
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.form__btn{
+    cursor: pointer;
+    padding: 1.5rem;
+    border-radius: 5px;
+    background-color: #28397e;
+    color: #fff;
+    font-family: 'roboto';
+    font-weight: 300;
+    border: 2px solid #f2f2f2;
+}
+
+.form__btn:hover{
+    border: 2px solid #000;
+    transition: all 0.2s ease-in;
+}
+
+.field{
+    border: none;
+    background-color: #f2f2f2;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: auto;
+    max-height: 10px;
+    padding: 2rem;
+    border-bottom: 1px solid #000;
+    font-family: 'roboto',Arial, Helvetica, sans-serif;
+}
+
+.field--textarea{
+    resize: none;
+}
+
+.fiel:hover{
+    border-bottom: 1px solid #0007d4;
+}
+
+.field:focus{
+    outline: none;
+}
+
+.labels{
+    font-size: 1.5rem;
+    font-family: 'montserrat';
+}
+/* POLITICAS */
+
+.footer-politicas {
+    height: auto;
+    width: 100%;
+    background-color: #001b55;
+    text-align: center;
+    padding: 3rem;
+    margin: 5rem 0 0 0;
+}
+
+.politicas__item{
+    color: #fff;
+    font-family: 'roboto';
+}
+
+
+
+/* mediaqueris */
+
+@media screen and (max-width:950px){
+    body{
+        background: url(../img/fondo-movil.jpg);
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: 150%;
+    }
+}
+
+@media screen and (max-width: 670px){
+    .header{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .header__icon{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 1.5rem 0;
+    }
+    .header__icon-img{
+        width: 20%;
+    }
+    .header__nav{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin: 1rem 0;
+    }
+
+    .section-formulario{
+        width: 100%;
+    }
+
+    .form__btn{
+        line-height: 1.5;
+        border-radius: 1.5rem;
+    }
+    .formulario__container{
+        padding: 5px;
+        width: 90%;
+    }
+
+}
+
+/* @media screen and (max-width: ) */
+
+
+

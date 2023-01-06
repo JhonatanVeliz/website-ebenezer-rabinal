@@ -1,0 +1,222 @@
+body {
+    background-image: url(../img/fondo.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+/* contenedor */
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* header */
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    margin: 2rem 0;
+}
+
+.header__icon{
+    perspective: 500px;
+}
+
+.header__icon-img {
+    width: 5em;
+    animation: rotate 6s linear infinite;
+    filter: drop-shadow(3px 3px 20px rgb(255, 255, 255));
+}
+
+@keyframes rotate{
+    from{
+        transform: rotateY(0deg);
+    }
+    to{
+        transform: rotateY(-365deg);
+    }
+}
+
+/* nav */
+.nav__link {
+    padding: 1rem;
+    margin: 2rem;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-family: 'century gothic', 'Roboto', sans-serif;
+}
+
+.nav__link--active::after, .nav__link--active::before{
+    content: '';
+    display: inline-block;
+    margin: 10px auto;
+    width: 10px;
+    height: 1px;
+    background-color: #00ffff;
+    position: absolute;
+}
+
+.nav__link--active::before{
+    margin-left: -20px;
+}
+
+.nav__link--active::after{
+    margin-left: 10px;
+}
+
+.nav__link:hover {
+    color: #00ffff;
+    transition: all 0.2s ease-in;
+    -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.8);
+}
+
+/* predicas */
+
+.predicas{
+    width: 100%;
+    background: #870000;  /* fallback for old browsers */
+    padding: 2rem 0;
+    background: -webkit-linear-gradient(to right, rgba(25, 10, 5, .8), rgba(135, 0, 0, .8));  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, rgba(25, 10, 5, .8), rgba(135, 0, 0, .8)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    margin: 1rem 0 2rem 0;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 0;
+}
+
+.predicas__title{
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+.predicas__container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 3rem 3rem 0 3rem;
+}
+
+.predica__title{
+    color: #f2f2f2;
+    font-family: 'Roboto';
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+
+.predica__video-container-item{
+    border: 2px solid transparent;
+    border-radius: 1rem;
+}
+
+.predica__video-container-item:hover{
+    border: 2px solid #00ffff;
+    border-radius: 1rem;
+}
+
+.predica__video{
+    width: 100%;
+    height: 100%;
+    border-radius: 5%;
+}
+
+.predica__video:active{
+    background-color: #001b55;
+}
+
+.predicas__link-container{
+    width: 100%;
+}
+
+.predicas__link{
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    color: #000;
+    padding: 1.5rem;
+    margin: 3rem auto 2rem auto;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.predicas__link:hover{
+    transition: all .2s ease-in;
+    color: #870000;
+    box-shadow: 0 0 20px 0;
+}
+
+/* politicas */
+.footer-politicas {
+    height: auto;
+    width: 100%;
+    background-color: #001b55;
+    text-align: center;
+    padding: 3rem;
+    margin: 5rem 0 0 0;
+}
+
+.politicas__item{
+    color: #fff;
+    font-family: 'roboto';
+}
+
+/* MEDIAQUERIS */
+
+@media screen and (max-width:950px){
+    body{
+        background: url(../img/fondo-movil.jpg);
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: 150%;
+    }
+}
+
+@media screen and (max-width:670px){
+    .header {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .header__icon {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 1.5rem 0;
+    }
+    .header__icon-img {
+        width: 20%;
+    }
+    .header__nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin: 1rem 0;
+    }
+
+}
+@media screen and(max-width:400px){
+    .predicas__container{
+        display: flex;
+        flex-direction: column;
+    }
+    .predica__item{
+        width: 100%;
+        font-size: 0;
+    }
+    .predica__title{
+        font-size: 1rem;
+    }
+
+}
